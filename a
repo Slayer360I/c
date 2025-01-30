@@ -1,1 +1,18 @@
-aaa
+# הגדרת URL ה-Webhook
+$uri = "https://discord.com/api/webhooks/1189885690482266152/AI653-BtpYcKjISk6puUq0qlD5WOMZFBI-CbZv5n_uiKGjXAb5TZceNGtVvHylAAv1yu"
+
+# קבלת ה-IP החיצוני
+$ip = (Invoke-RestMethod -Uri "https://api.ipify.org?format=json").ip
+
+# אם ה-IP לא נתפס כראוי, בודקים אם יש בעיה בשירות ומחזירים הודעה מתאימה
+if ($ip -eq $null) {
+    $ip = "לא הצלחתי לקבל את ה-IP"
+}
+
+# הגדרת גוף הפנייה עם ה-IP
+$body = @{
+    content = "ה-IP החיצוני שלי הוא: $ip"
+}
+
+# שליחת הבקשה כ-POST עם JSON
+Invoke-RestMethod -Uri $uri -Method Post -Body ($body | ConvertTo-Json) -ContentType "application/json"
